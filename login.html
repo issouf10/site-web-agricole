@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <title>Connexion - AgroConnect</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="form-page">
+    <nav class="navbar">
+        <div class="logo">Agro<span>Connect</span></div>
+        <ul class="nav-links">
+            <li><a href="index.html">Accueil</a></li>
+            <li><a href="register.html" class="btn-signup">S'inscrire</a></li>
+        </ul>
+    </nav>
+
+    <div class="auth-form">
+        <h1>Connexion</h1>
+        <form id="loginForm">
+            <div class="form-group">
+                <label>Email</label>
+                <input type="email" id="email" required>
+            </div>
+            <div class="form-group">
+                <label>Mot de passe</label>
+                <input type="password" id="password" required>
+            </div>
+            <button type="submit" class="btn-submit">Entrer</button>
+        </form>
+        <p class="switch-form">Pas encore de compte ? <a href="register.html">S'inscrire</a></p>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

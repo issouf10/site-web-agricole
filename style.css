@@ -1,0 +1,201 @@
+:root {
+    --primary-color: #2d5a27;
+    --secondary-color: #8bc34a;
+    --accent-color: #17a2b8; /* Pour les actions secondaires */
+    --text-color: #333;
+    --light-bg: #f4f7f2;
+    --white: #ffffff;
+}
+
+body {
+    font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: var(--light-bg);
+    color: var(--text-color);
+    line-height: 1.6;
+}
+
+h1, h2, h3 {
+    color: var(--primary-color);
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: var(--white);
+    padding: 1rem 5%;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.logo {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: var(--primary-color);
+}
+
+.logo span { color: var(--secondary-color); }
+
+.nav-links {
+    display: flex;
+    list-style: none;
+    gap: 20px;
+    align-items: center;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: var(--text-color);
+    font-weight: 500;
+    transition: color 0.3s;
+}
+
+.nav-links a:hover { color: var(--primary-color); }
+
+.btn-signup {
+    background: var(--primary-color);
+    color: white !important;
+    padding: 8px 20px;
+    border-radius: 20px;
+    transition: background-color 0.3s;
+}
+
+.hero {
+    background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('https://images.unsplash.com/photo-1500382017468-9049fed747ef?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80');
+    background-size: cover;
+    background-position: center;
+    height: 60vh;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    color: white;
+}
+
+.hero-content { width: 100%; max-width: 800px; margin: 0 auto; padding: 20px; }
+
+.cta-button {
+    display: inline-block;
+    margin-top: 20px;
+    padding: 12px 30px;
+    background: var(--secondary-color);
+    color: white;
+    text-decoration: none;
+    border-radius: 30px;
+    font-weight: bold;
+    transition: transform 0.3s;
+}
+
+.cta-button:hover { transform: scale(1.05); }
+
+.container { padding: 40px 5%; max-width: 1200px; margin: 0 auto; }
+
+.section-title { text-align: center; margin-bottom: 40px; }
+
+.product-grid, .grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 30px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.product-card, .card {
+    background: white;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+    transition: translateY 0.3s;
+}
+
+.product-card:hover, .card:hover { transform: translateY(-5px); }
+.product-image { height: 200px; background: #eee; overflow: hidden; display: block; }
+.product-image img { width: 100%; height: 100%; object-fit: cover; }
+
+.product-info { padding: 15px; text-align: center; }
+.price { display: block; font-weight: bold; color: var(--primary-color); font-size: 1.2rem; margin: 10px 0; }
+
+/* Styles pour les formulaires */
+.form-page {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: calc(100vh - 100px); /* Ajuste la hauteur pour laisser de la place à la nav et au footer */
+    padding: 20px;
+}
+
+.auth-form, .form-container { /* Harmonisation des noms de classes */
+    background: var(--white);
+    padding: 40px;
+    border-radius: 10px;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+    width: 100%;
+    max-width: 400px;
+    text-align: center;
+}
+
+.form-group { margin-bottom: 20px; text-align: left; }
+.form-group label { display: block; margin-bottom: 5px; font-weight: 500; color: var(--text-color); }
+.form-group input { width: calc(100% - 22px); padding: 10px; border: 1px solid #ddd; border-radius: 5px; box-sizing: border-box; font-size: 1rem; }
+
+/* Toggle Password Visibility */
+.password-wrapper {
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+.toggle-password {
+    position: absolute;
+    right: 10px;
+    background: none !important;
+    color: var(--primary-color) !important;
+    width: auto !important;
+    padding: 0 !important;
+    font-size: 0.85rem !important;
+}
+
+/* Boutons génériques */
+button, .add-to-cart, .btn-submit, .btn-full {
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    width: 100%;
+    padding: 10px 15px;
+    background: var(--primary-color);
+    color: white;
+    font-size: 1rem;
+    font-weight: 600;
+    text-decoration: none; /* Pour les boutons qui sont des liens */
+    display: inline-block; /* Pour les boutons qui sont des liens */
+}
+
+button:hover, .add-to-cart:hover, .btn-submit:hover, .btn-full:hover {
+    background-color: var(--secondary-color);
+    transform: translateY(-2px);
+}
+
+/* Boutons spécifiques */
+.btn-add { background-color: var(--secondary-color); width: auto; padding: 10px 20px; }
+.btn-add:hover { background-color: var(--primary-color); }
+
+.btn-modify { background-color: var(--accent-color); }
+.btn-modify:hover { background-color: darken(var(--accent-color), 10%); }
+
+.btn-delete { background-color: #dc3545; }
+.btn-delete:hover { background-color: darken(#dc3545, 10%); }
+
+.switch-form { margin-top: 20px; font-size: 0.9rem; }
+.switch-form a { color: var(--primary-color); text-decoration: none; font-weight: 500; }
+.switch-form a:hover { text-decoration: underline; }
+
+footer {
+    background: #222;
+    color: white;
+    text-align: center;
+    padding: 20px 0;
+}
