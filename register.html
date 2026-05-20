@@ -6,34 +6,48 @@
     <title>Inscription - AgroConnect</title>
     <link rel="stylesheet" href="style.css">
 </head>
-<body>
+<body class="form-page">
     <nav class="navbar">
         <div class="logo">Agro<span>Connect</span></div>
         <ul class="nav-links"><li><a href="index.html">Retour à l'accueil</a></li></ul>
     </nav>
 
-    <div class="form-page">
-        <form class="auth-form" id="registerForm">
-            <h2>Créer un compte</h2>
+    <div class="auth-form">
+        <h1>S'inscrire</h1>
+        <p>Remplissez les informations ci-dessous pour créer votre compte.</p>
+
+        <form action="register.php" method="post">
             <div class="form-group">
-                <label>Nom et Prénom</label>
-                <input type="text" placeholder="Votre nom" required>
+                <label for="nom">Nom</label>
+                <input type="text" id="nom" name="nom" placeholder="Votre nom" required>
             </div>
+
             <div class="form-group">
-                <label>Email</label>
-                <input type="email" placeholder="email@exemple.com" required>
+                <label for="prenom">Prénom</label>
+                <input type="text" id="prenom" name="prenom" placeholder="Votre prénom" required>
             </div>
+
             <div class="form-group">
-                <label>Mot de passe</label>
+                <label for="email">Gmail / Email</label>
+                <input type="email" id="email" name="email" placeholder="exemple@gmail.com" required>
+            </div>
+
+            <div class="form-group">
+                <label for="password">Mot de passe</label>
                 <div class="password-wrapper">
-                    <input type="password" id="reg-pass" placeholder="8 caractères minimum" required>
-                    <button type="button" class="toggle-password" data-target="reg-pass">Voir</button>
+                    <input type="password" id="password" name="password" placeholder="Votre mot de passe" required>
                 </div>
             </div>
-            <button type="submit" class="btn-full">S'inscrire</button>
-            <p class="switch-form">Déjà un compte ? <a href="login.html">Connectez-vous</a></p>
+
+            <button type="submit" class="btn-submit">S'inscrire</button>
         </form>
+
+        <p class="switch-form">Déjà inscrit ? <a href="login.html">Connectez-vous ici</a></p>
     </div>
+
+    <footer>
+        <p>&copy; 2026 AgroConnect - Plateforme d'échange agricole</p>
+    </footer>
     <script src="script.js"></script>
 </body>
 </html>

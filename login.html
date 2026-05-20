@@ -2,34 +2,36 @@
 <html lang="fr">
 <head>
     <meta charset="UTF-8">
-    <title>Connexion - AgroConnect</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Connexion - AgriConnect</title>
     <link rel="stylesheet" href="style.css">
 </head>
-<body class="form-page">
+<body>
     <nav class="navbar">
-        <div class="logo">Agro<span>Connect</span></div>
-        <ul class="nav-links">
-            <li><a href="index.html">Accueil</a></li>
-            <li><a href="register.html" class="btn-signup">S'inscrire</a></li>
-        </ul>
+        <h1>AgriConnect</h1>
+        <ul class="nav-links"><li><a href="index.html">Accueil</a></li></ul>
     </nav>
 
-    <div class="auth-form">
-        <h1>Connexion</h1>
-        <form id="loginForm">
+    <div class="auth-container" style="display:flex; justify-content:center; align-items:center; min-height:80vh;">
+        <form class="login-form" action="login_process.php" method="POST">
+            <h2>Connexion</h2>
             <div class="form-group">
                 <label>Email</label>
-                <input type="email" id="email" required>
+                <input type="email" name="email" placeholder="Votre email" required>
             </div>
             <div class="form-group">
                 <label>Mot de passe</label>
-                <input type="password" id="password" required>
+                <input type="password" name="password" placeholder="Votre mot de passe" required>
             </div>
-            <button type="submit" class="btn-submit">Entrer</button>
+            <button type="submit" class="btn-submit">
+                Se connecter
+            </button>
+            <p style="text-align:center;">Pas encore de compte ? <a href="register.html">S'inscrire</a></p>
         </form>
-        <p class="switch-form">Pas encore de compte ? <a href="register.html">S'inscrire</a></p>
     </div>
 
-    <script src="script.js"></script>
+    <footer>
+        <p>&copy; 2026 AgroConnect - Plateforme d'échange agricole.</p>
+    </footer>
 </body>
 </html>

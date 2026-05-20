@@ -90,7 +90,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             if (mysqli_stmt_execute($stmt)) {
                 $registration_success = "Compte créé avec succès ! Vous pouvez maintenant vous connecter.";
                 // Rediriger vers la page de connexion après l'inscription
-                header("location: login.php");
+                header("location: login.html");
                 exit;
             } else {
                 echo "Une erreur est survenue lors de l'enregistrement. Veuillez réessayer plus tard.";
@@ -117,7 +117,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 <body class="form-page">
     <nav class="navbar">
         <div class="logo">Agro<span>Connect</span></div>
-        <ul class="nav-links"><li><a href="index.php">Retour à l'accueil</a></li></ul>
+        <ul class="nav-links"><li><a href="index.html">Retour à l'accueil</a></li></ul>
     </nav>
 
     <div class="auth-form">
@@ -155,15 +155,23 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                 <span class="error-msg"><?php echo $confirm_password_err; ?></span>
             </div>
 
-            <?php if (!empty($registration_success)): ?>
-                <div class="success-msg" style="color: var(--primary-color); margin-bottom: 15px;"><?php echo $registration_success; ?></div>
-            <?php endif; ?>
+            <div class="feedback-container">
+                <?php if (!empty($registration_success)): ?>
+                    <div class="success-msg" style="background: #d4edda; color: #155724; padding: 10px; border-radius: 5px; margin-bottom: 15px;">
+                        <?php echo $registration_success; ?>
+                    </div>
+                <?php endif; ?>
+            </div>
 
             <button type="submit" class="btn-submit">S'inscrire</button>
         </form>
 
-        <p class="switch-form">Déjà inscrit ? <a href="login.php">Connectez-vous ici</a></p>
+        <p class="switch-form">Déjà inscrit ? <a href="login.html">Connectez-vous ici</a></p>
     </div>
+
+    <footer>
+        <p>&copy; 2026 AgroConnect - Plateforme d'échange agricole</p>
+    </footer>
     <script src="script.js"></script>
 </body>
 </html>
