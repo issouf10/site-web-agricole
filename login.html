@@ -3,35 +3,49 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Connexion - AgriConnect</title>
+    <title>Connexion - AgroConnect</title>
     <link rel="stylesheet" href="style.css">
 </head>
-<body>
+<body class="form-page">
     <nav class="navbar">
-        <h1>AgriConnect</h1>
-        <ul class="nav-links"><li><a href="index.html">Accueil</a></li></ul>
+        <div class="logo">Agro<span>Connect</span></div>
+        <ul class="nav-links">
+            <li><a href="index.html">Accueil</a></li>
+        </ul>
     </nav>
 
-    <div class="auth-container" style="display:flex; justify-content:center; align-items:center; min-height:80vh;">
-        <form class="login-form" action="login_process.php" method="POST">
-            <h2>Connexion</h2>
+    <div class="auth-form animate-fade-in">
+        <h1>Bon retour !</h1>
+        <p>Connectez-vous pour accéder à votre tableau de bord agricole.</p>
+
+        <form action="login.php" method="post">
             <div class="form-group">
-                <label>Email</label>
-                <input type="email" name="email" placeholder="Votre email" required>
+                <label for="email">Adresse Email</label>
+                <input type="email" id="email" name="email" placeholder="exemple@gmail.com" required>
             </div>
+
             <div class="form-group">
-                <label>Mot de passe</label>
-                <input type="password" name="password" placeholder="Votre mot de passe" required>
+                <label for="password">Mot de passe</label>
+                <div class="password-wrapper">
+                    <input type="password" id="password" name="password" placeholder="Votre mot de passe" required>
+                    <button type="button" class="toggle-password" data-target="password">Voir</button>
+                </div>
             </div>
-            <button type="submit" class="btn-submit">
-                Se connecter
-            </button>
-            <p style="text-align:center;">Pas encore de compte ? <a href="register.html">S'inscrire</a></p>
+
+            <div class="form-options">
+                <label><input type="checkbox"> Se souvenir de moi</label>
+                <a href="#" class="forgot-password">Mot de passe oublié ?</a>
+            </div>
+
+            <button type="submit" class="btn-submit">Se connecter</button>
         </form>
+
+        <p class="switch-form">Nouveau ici ? <a href="register.php">Créez un compte</a></p>
     </div>
 
     <footer>
-        <p>&copy; 2026 AgroConnect - Plateforme d'échange agricole.</p>
+        <p>&copy; 2026 AgroConnect - Plateforme d'échange agricole</p>
     </footer>
+    <script src="script.js"></script>
 </body>
 </html>

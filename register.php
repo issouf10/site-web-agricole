@@ -16,6 +16,13 @@ $nom = $email = $password = $confirm_password = "";
 $nom_err = $email_err = $password_err = $confirm_password_err = "";
 $registration_success = "";
 
+// Générer un jeton CSRF
+if (empty($_SESSION['csrf_token'])) {
+    $_SESSION['csrf_token'] = bin2hex(random_bytes(32));
+}
+$csrf_token = $_SESSION['csrf_token'];
+
+
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
     // Validation du nom
@@ -25,10 +32,20 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $nom = trim($_POST["nom"]);
     }
 
+    // Vérification du jeton CSRF
+    if (!isset($_POST['csrf_token']) || !isset($_SESSION['csrf_token']) || $_POST['csrf_token'] !== $_SESSION['csrf_token']) {
+        // Gérer l'échec de la validation CSRF, par exemple, journaliser, rediriger ou afficher une erreur
+        die('Erreur de sécurité : Jeton CSRF invalide.');
+    }
+    // Le jeton est valide, on peut le supprimer pour éviter la réutilisation
+    unset($_SESSION['csrf_token']);
+
     // Validation de l'email
     if (empty(trim($_POST["email"]))) {
         $email_err = "Veuillez entrer une adresse email.";
-    } else {
+    } elseif (!filter_var(trim($_POST["email"]), FILTER_VALIDATE_EMAIL)) {
+        $email_err = "Veuillez entrer une adresse email valide.";
+    }else {
         // Préparer une requête SELECT
         $sql = "SELECT id FROM users WHERE email = ?";
 
@@ -45,11 +62,10 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                     $email = trim($_POST["email"]);
                 }
             } else {
-                echo "Oops! Une erreur est survenue. Veuillez réessayer plus tard.";
+                echo "Oops! Une erreur est survenue lors de la vérification de l'email. Veuillez réessayer plus tard.";
+                exit; // Arrêter l'exécution en cas d'erreur critique
             }
             mysqli_stmt_close($stmt);
-        } else {
-            $email_err = "Erreur de connexion à la base de données.";
         }
     }
 
@@ -132,6 +148,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             </div>
 
             <div class="form-group">
+                <input type="hidden" name="csrf_token" value="<?php echo htmlspecialchars($csrf_token); ?>">
                 <label for="email">Adresse Email</label>
                 <input type="email" id="email" name="email" value="<?php echo htmlspecialchars($email); ?>" required>
                 <span class="error-msg"><?php echo $email_err; ?></span>
