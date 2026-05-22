@@ -3,51 +3,63 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Inscription - AgroConnect</title>
+    <title>Inscription - AgriConnect</title>
+
     <link rel="stylesheet" href="style.css">
 </head>
-<body class="form-page">
+
+<body>
+
+    <!-- Menu -->
     <nav class="navbar">
-        <div class="logo">Agro<span>Connect</span></div>
-        <ul class="nav-links"><li><a href="index.html">Retour à l'accueil</a></li></ul>
+        <h1 class="logo">🌱 AgriConnect</h1>
+
+        <ul class="nav-links">
+            <li><a href="index.html">Accueil</a></li>
+            <li><a href="features.html">Fonctionnalités</a></li>
+            <li><a href="login.html">Connexion</a></li>
+            <li><a href="register.html">Inscription</a></li>
+        </ul>
     </nav>
 
-    <div class="auth-form">
-        <h1>S'inscrire</h1>
-        <p>Remplissez les informations ci-dessous pour créer votre compte.</p>
+    <!-- Formulaire inscription -->
+    <section class="auth-section">
 
-        <form action="/api/auth/register" method="post">
-            <div class="form-group">
-                <label for="nom">Nom</label>
-                <input type="text" id="nom" name="nom" placeholder="Votre nom" required>
+        <div class="auth-box">
+            <h2>Créer un compte</h2>
+            <p>Inscrivez-vous pour rejoindre AgriConnect.</p>
+
+            <form>
+
+                <input type="text"
+                       placeholder="Nom complet"
+                       required>
+
+                <input type="email"
+                       placeholder="Votre email"
+                       required>
+
+                <input type="password"
+                       placeholder="Créer un mot de passe"
+                       required>
+
+                <button type="submit">
+                    S'inscrire
+                </button>
+
+            </form>
+
+            <div style="margin-top: 20px;">
+                <p>Vous avez déjà un compte ?</p>
+                <a href="login.html" style="text-decoration: none;">
+                    <button>
+                        Se connecter
+                    </button>
+                </a>
             </div>
-
-            <div class="form-group">
-                <label for="prenom">Prénom</label>
-                <input type="text" id="prenom" name="prenom" placeholder="Votre prénom" required>
-            </div>
-
-            <div class="form-group">
-                <label for="email">Gmail / Email</label>
-                <input type="email" id="email" name="email" placeholder="exemple@gmail.com" required>
-            </div>
-
-            <div class="form-group">
-                <label for="password">Mot de passe</label>
-                <div class="password-wrapper">
-                    <input type="password" id="password" name="password" placeholder="Votre mot de passe" required>
-                </div>
-            </div>
-
-            <button type="submit" class="btn-submit">S'inscrire</button>
-        </form>
-
-        <p class="switch-form">Déjà inscrit ? <a href="login.html">Connectez-vous ici</a></p>
-    </div>
-
-    <footer>
-        <p>&copy; 2026 AgroConnect - Plateforme d'échange agricole</p>
-    </footer>
+        </div>
+    </section>
+    
     <script src="script.js"></script>
 </body>
 </html>

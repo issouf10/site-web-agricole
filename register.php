@@ -130,61 +130,69 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     <title>Inscription - AgroConnect</title>
     <link rel="stylesheet" href="style.css">
 </head>
-<body class="form-page">
+<body>
     <nav class="navbar">
-        <div class="logo">Agro<span>Connect</span></div>
-        <ul class="nav-links"><li><a href="index.html">Retour à l'accueil</a></li></ul>
+        <h1 class="logo">🌱 AgriConnect</h1>
+        <ul class="nav-links">
+            <li><a href="index.html">Accueil</a></li>
+            <li><a href="features.html">Fonctionnalités</a></li>
+            <li><a href="login.html">Connexion</a></li>
+            <li><a href="register.html">Inscription</a></li>
+        </ul>
     </nav>
 
-    <div class="auth-form">
-        <h1>Rejoignez AgroConnect</h1>
-        <p>Créez votre compte pour gérer vos activités agricoles.</p>
+    <section class="auth-section">
+        <div class="auth-form">
+            <img src="images/community.jpg" alt="AgriConnect" style="width:100%; border-radius:10px; margin-bottom:15px; height:150px; object-fit:cover;">
+            <h1>Rejoignez AgroConnect</h1>
+            <p>Créez votre compte pour gérer vos activités agricoles.</p>
 
-        <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="post">
-            <div class="form-group">
-                <label for="nom">Nom et Prénom</label>
-                <input type="text" id="nom" name="nom" value="<?php echo htmlspecialchars($nom); ?>" required>
-                <span class="error-msg"><?php echo $nom_err; ?></span>
-            </div>
-
-            <div class="form-group">
-                <input type="hidden" name="csrf_token" value="<?php echo htmlspecialchars($csrf_token); ?>">
-                <label for="email">Adresse Email</label>
-                <input type="email" id="email" name="email" value="<?php echo htmlspecialchars($email); ?>" required>
-                <span class="error-msg"><?php echo $email_err; ?></span>
-            </div>
-
-            <div class="form-group">
-                <label for="password">Mot de passe</label>
-                <div class="password-wrapper">
-                    <input type="password" id="password" name="password" required>
-                    <button type="button" class="toggle-password" data-target="password">Voir</button>
+            <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="post">
+                <div class="form-group">
+                    <label for="nom">Nom et Prénom</label>
+                    <input type="text" id="nom" name="nom" value="<?php echo htmlspecialchars($nom); ?>" required>
+                    <span class="error-msg" style="color:red; font-size:12px;"><?php echo $nom_err; ?></span>
                 </div>
-                <span class="error-msg"><?php echo $password_err; ?></span>
-            </div>
 
-            <div class="form-group">
-                <label for="confirm_password">Confirmez le mot de passe</label>
-                <div class="password-wrapper">
-                    <input type="password" id="confirm_password" name="confirm_password" required>
-                    <button type="button" class="toggle-password" data-target="confirm_password">Voir</button>
+                <div class="form-group">
+                    <input type="hidden" name="csrf_token" value="<?php echo htmlspecialchars($csrf_token); ?>">
+                    <label for="email">Adresse Email</label>
+                    <input type="email" id="email" name="email" value="<?php echo htmlspecialchars($email); ?>" required>
+                    <span class="error-msg" style="color:red; font-size:12px;"><?php echo $email_err; ?></span>
                 </div>
-                <span class="error-msg"><?php echo $confirm_password_err; ?></span>
-            </div>
 
-            <div class="feedback-container">
-                <?php if (!empty($registration_success)): ?>
-                    <div class="success-msg" style="background: #d4edda; color: #155724; padding: 10px; border-radius: 5px; margin-bottom: 15px;">
-                        <?php echo $registration_success; ?>
+                <div class="form-group">
+                    <label for="password">Mot de passe</label>
+                    <div class="password-wrapper">
+                        <input type="password" id="password" name="password" required>
+                        <button type="button" class="toggle-password" data-target="password">Voir</button>
                     </div>
-                <?php endif; ?>
-            </div>
+                    <span class="error-msg" style="color:red; font-size:12px;"><?php echo $password_err; ?></span>
+                </div>
 
-            <button type="submit" class="btn-submit">S'inscrire</button>
-        </form>
+                <div class="form-group">
+                    <label for="confirm_password">Confirmez le mot de passe</label>
+                    <div class="password-wrapper">
+                        <input type="password" id="confirm_password" name="confirm_password" required>
+                        <button type="button" class="toggle-password" data-target="confirm_password">Voir</button>
+                    </div>
+                    <span class="error-msg" style="color:red; font-size:12px;"><?php echo $confirm_password_err; ?></span>
+                </div>
 
-        <p class="switch-form">Déjà inscrit ? <a href="login.html">Connectez-vous ici</a></p>
-    </div>
+                <div class="feedback-container">
+                    <?php if (!empty($registration_success)): ?>
+                        <div class="success-msg" style="background: #d4edda; color: #155724; padding: 10px; border-radius: 5px; margin-bottom: 15px;">
+                            <?php echo $registration_success; ?>
+                        </div>
+                    <?php endif; ?>
+                </div>
+
+                <button type="submit" class="btn-submit">S'inscrire</button>
+            </form>
+
+            <p class="switch-form">Déjà inscrit ? <a href="login.html">Connectez-vous ici</a></p>
+        </div>
+    </section>
 
     <footer>
         <p>&copy; 2026 AgroConnect - Plateforme d'échange agricole</p>
