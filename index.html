@@ -3,92 +3,90 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>AgriConnect - Agriculture Moderne</title>
-
+    <title>AgriConnect - Connecter la Terre et la Technologie</title>
     <link rel="stylesheet" href="style.css">
 </head>
-
 <body>
 
-    <!-- Menu -->
+    <!-- Navigation -->
     <nav class="navbar">
         <h1 class="logo">🌱 AgriConnect</h1>
-
         <ul class="nav-links">
             <li><a href="index.html">Accueil</a></li>
             <li><a href="features.html">Fonctionnalités</a></li>
             <li><a href="login.html">Connexion</a></li>
             <li><a href="register.html">Inscription</a></li>
-            <li><a href="#" class="cart-nav">🛒 Panier (<span id="cart-count">0</span>)</a></li>
         </ul>
     </nav>
 
-    <!-- Section principale -->
-    <section class="hero">
-
+    <!-- Section Hero -->
+    <header class="hero">
         <div class="hero-text">
-            <h2>Bienvenue sur AgriConnect</h2>
-
+            <div class="hero-badge">🌍 Plateforme agricole moderne</div>
+            <h2>Connecter la Terre<br>et la Technologie</h2>
             <p>
-                Une plateforme moderne dédiée aux agriculteurs pour vendre
-                leurs produits agricoles, obtenir des conseils et gérer
-                leurs récoltes facilement.
+                AgriConnect aide les agriculteurs à vendre leurs produits,
+                recevoir des conseils agricoles et rejoindre une communauté
+                dynamique pour une agriculture durable.
             </p>
-
-            <!-- Boutons CTA -->
             <div class="buttons">
-                <a href="features.html">
-                    <button>Découvrir nos services</button>
+                <a href="register.html" class="btn btn-accent">
+                    🚀 Commencer gratuitement
                 </a>
-
-                <a href="register.html">
-                    <button>S'inscrire maintenant</button>
-                </a>
-
-                <a href="login.html">
-                    <button>Se connecter</button>
+                <a href="features.html" class="btn btn-outline">
+                    Découvrir les services
                 </a>
             </div>
         </div>
+    </header>
 
-    </section>
-
-    <!-- Boutique -->
-    <section class="services" id="boutique">
-
-        <h2>Notre Boutique</h2>
+    <!-- Services -->
+    <section class="services">
+        <span class="section-label">Nos services</span>
+        <h2>Pourquoi choisir AgriConnect ?</h2>
+        <p class="subtitle">Tout ce dont vous avez besoin pour développer votre activité agricole.</p>
 
         <div class="cards">
-
-            <div class="card product" data-name="Panier de Légumes" data-price="25">
-                <img src="images/vente.jpg" alt="Vente agricole">
-                <h3>🌾 Panier de Légumes</h3>
-                <p>Prix: 25.000 FCFA</p>
-                <button class="btn-add">Ajouter au panier</button>
+            <div class="card">
+                <img src="images/vente.jpg" alt="Marché agricole">
+                <div class="card-body">
+                    <h3>Vente directe</h3>
+                    <p>Vendez vos produits agricoles directement aux consommateurs sans intermédiaires.</p>
+                    <a href="register.html" class="btn">Commencer à vendre →</a>
+                </div>
             </div>
 
-            <div class="card product" data-name="Conseil Expert" data-price="50">
+            <div class="card">
                 <img src="images/conseil.jpg" alt="Conseils agricoles">
-                <h3>📚 Session Conseil</h3>
-                <p>Prix: 50.000 FCFA</p>
-                <button class="btn-add">Ajouter au panier</button>
+                <div class="card-body">
+                    <h3>Conseils agricoles</h3>
+                    <p>Recevez des recommandations personnalisées pour améliorer vos cultures et votre rendement.</p>
+                    <a href="register.html" class="btn">Obtenir des conseils →</a>
+                </div>
             </div>
 
-            <div class="card product" data-name="Accès Communauté" data-price="10">
-                <img src="images/community.jpg" alt="Communauté">
-                <h3>🤝 Club Agri</h3>
-                <p>Prix: 10.000 FCFA / mois</p>
-                <button class="btn-add">Ajouter au panier</button>
+            <div class="card">
+                <img src="images/community.jpg" alt="Communauté agricole">
+                <div class="card-body">
+                    <h3>Communauté agricole</h3>
+                    <p>Échangez avec d'autres agriculteurs et partagez des expériences utiles.</p>
+                    <a href="register.html" class="btn">Rejoindre →</a>
+                </div>
             </div>
-
         </div>
+    </section>
+
+    <!-- Bande CTA -->
+    <section class="cta-band">
+        <h2>Prêt à transformer votre agriculture ?</h2>
+        <p>Rejoignez des milliers d'agriculteurs qui font confiance à AgriConnect.</p>
+        <a href="register.html" class="btn btn-accent">Créer mon compte gratuit</a>
     </section>
 
     <!-- Footer -->
     <footer>
-        <p>© 2026 AgriConnect - Tous droits réservés</p>
+        <p>© 2026 <strong>AgriConnect</strong> — Tous droits réservés</p>
     </footer>
 
-    <script src="script.js"></script>
 </body>
 </html>

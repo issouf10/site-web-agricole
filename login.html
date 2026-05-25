@@ -4,16 +4,13 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Connexion - AgriConnect</title>
-
     <link rel="stylesheet" href="style.css">
 </head>
-
 <body>
 
-    <!-- Menu -->
+    <!-- Navigation -->
     <nav class="navbar">
         <h1 class="logo">🌱 AgriConnect</h1>
-
         <ul class="nav-links">
             <li><a href="index.html">Accueil</a></li>
             <li><a href="features.html">Fonctionnalités</a></li>
@@ -22,36 +19,82 @@
         </ul>
     </nav>
 
-    <!-- Formulaire -->
+    <!-- Formulaire de connexion -->
     <section class="auth-section">
-
         <div class="auth-box">
-            <h2>Connexion</h2>
-            <p>Connectez-vous pour accéder à votre espace.</p>
 
-            <form>
-                <input type="email"
-                       placeholder="Votre email"
-                       required>
+            <div class="auth-logo">🌱 AgriConnect</div>
+            <h2>Bon retour !</h2>
+            <p class="auth-subtitle">
+                Connectez-vous pour accéder à votre espace<br>et gérer votre activité agricole.
+            </p>
 
-                <input type="password"
-                       placeholder="Votre mot de passe"
-                       required>
+            <form action="#" method="POST" onsubmit="handleLogin(event)">
 
-                <button type="submit">
-                    Se connecter
+                <div class="form-group">
+                    <label for="email">Adresse email</label>
+                    <input
+                        type="email"
+                        id="email"
+                        name="email"
+                        placeholder="votre@email.com"
+                        required
+                        autocomplete="email"
+                    >
+                </div>
+
+                <div class="form-group">
+                    <label for="password">Mot de passe</label>
+                    <input
+                        type="password"
+                        id="password"
+                        name="password"
+                        placeholder="Votre mot de passe"
+                        required
+                        autocomplete="current-password"
+                    >
+                </div>
+
+                <div id="error-msg" style="display:none; color:#d32f2f; background:#ffebee; border-radius:8px; padding:10px 14px; font-size:14px; margin-bottom:8px;"></div>
+
+                <button type="submit" class="btn-submit">
+                    Se connecter →
                 </button>
+
             </form>
 
-            <div style="margin-top: 20px;">
-                <p>Vous n'avez pas de compte ?</p>
-                <a href="register.html" style="text-decoration: none;">
-                    <button type="button" style="background: #ffa000;">Créer un compte</button>
-                </a>
-            </div>
+            <p class="auth-divider">
+                Pas encore de compte ?
+                <a href="register.html">Créer un compte gratuit</a>
+            </p>
+
         </div>
     </section>
-    
-    <script src="script.js"></script>
+
+    <script>
+        function handleLogin(e) {
+            e.preventDefault();
+            const email = document.getElementById('email').value;
+            const password = document.getElementById('password').value;
+            const errorMsg = document.getElementById('error-msg');
+
+            if (!email || !password) {
+                errorMsg.textContent = '⚠️ Veuillez remplir tous les champs.';
+                errorMsg.style.display = 'block';
+                return;
+            }
+
+            if (password.length < 6) {
+                errorMsg.textContent = '⚠️ Le mot de passe doit contenir au moins 6 caractères.';
+                errorMsg.style.display = 'block';
+                return;
+            }
+
+            errorMsg.style.display = 'none';
+            // Simulation de connexion réussie
+            alert('✅ Connexion réussie ! Bienvenue sur AgriConnect.');
+        }
+    </script>
+
 </body>
 </html>
