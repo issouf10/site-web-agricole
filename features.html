@@ -13,11 +13,31 @@
         <h1 class="logo">🌱 AgriConnect</h1>
         <ul class="nav-links">
             <li><a href="index.html">Accueil</a></li>
+            <li><a href="products.html">Produits</a></li>
             <li><a href="features.html">Fonctionnalités</a></li>
             <li><a href="login.html">Connexion</a></li>
             <li><a href="register.html">Inscription</a></li>
+            <li class="cart-nav"><a href="#" style="background:#e8f5e9; color:var(--primary)">🛒 Panier (<span id="cart-count">0</span>)</a></li>
         </ul>
     </nav>
+
+    <!-- Panier Latéral -->
+    <div id="cart-drawer" class="cart-drawer">
+        <div class="cart-header">
+            <h3>🛒 Mon Panier</h3>
+            <button id="close-cart" style="background:none; border:none; font-size:24px; cursor:pointer;">&times;</button>
+        </div>
+        <div id="cart-items">
+            <!-- Les produits s'afficheront ici -->
+        </div>
+        <div class="cart-total-container">
+            <span>Total :</span>
+            <span id="cart-total">0 FCFA</span>
+        </div>
+        <div style="margin-top:auto; padding-top:20px;">
+            <button class="btn btn-accent" style="width:100%">Passer la commande</button>
+        </div>
+    </div>
 
     <!-- Hero -->
     <header class="hero features-hero">
@@ -86,5 +106,6 @@
         <p>© 2026 <strong>AgriConnect</strong> — Tous droits réservés</p>
     </footer>
 
+    <script src="script.js"></script>
 </body>
 </html>

@@ -13,11 +13,31 @@
         <h1 class="logo">🌱 AgriConnect</h1>
         <ul class="nav-links">
             <li><a href="index.html">Accueil</a></li>
+            <li><a href="products.html">Produits</a></li>
             <li><a href="features.html">Fonctionnalités</a></li>
             <li><a href="login.html">Connexion</a></li>
             <li><a href="register.html">Inscription</a></li>
+            <li class="cart-nav"><a href="#" style="background:#e8f5e9; color:var(--primary)">🛒 Panier (<span id="cart-count">0</span>)</a></li>
         </ul>
     </nav>
+
+    <!-- Panier Latéral -->
+    <div id="cart-drawer" class="cart-drawer">
+        <div class="cart-header">
+            <h3>🛒 Mon Panier</h3>
+            <button id="close-cart" style="background:none; border:none; font-size:24px; cursor:pointer;">&times;</button>
+        </div>
+        <div id="cart-items">
+            <!-- Les produits s'afficheront ici -->
+        </div>
+        <div class="cart-total-container">
+            <span>Total :</span>
+            <span id="cart-total">0 FCFA</span>
+        </div>
+        <div style="margin-top:auto; padding-top:20px;">
+            <button class="btn btn-accent" style="width:100%">Passer la commande</button>
+        </div>
+    </div>
 
     <!-- Section Hero -->
     <header class="hero">
@@ -47,7 +67,7 @@
         <p class="subtitle">Tout ce dont vous avez besoin pour développer votre activité agricole.</p>
 
         <div class="cards">
-            <div class="card">
+            <div class="card" style="--i: 1">
                 <img src="images/vente.jpg" alt="Marché agricole">
                 <div class="card-body">
                     <h3>Vente directe</h3>
@@ -56,7 +76,7 @@
                 </div>
             </div>
 
-            <div class="card">
+            <div class="card" style="--i: 2">
                 <img src="images/conseil.jpg" alt="Conseils agricoles">
                 <div class="card-body">
                     <h3>Conseils agricoles</h3>
@@ -65,12 +85,40 @@
                 </div>
             </div>
 
-            <div class="card">
+            <div class="card" style="--i: 3">
                 <img src="images/community.jpg" alt="Communauté agricole">
                 <div class="card-body">
                     <h3>Communauté agricole</h3>
                     <p>Échangez avec d'autres agriculteurs et partagez des expériences utiles.</p>
                     <a href="register.html" class="btn">Rejoindre →</a>
+                </div>
+            </div>
+
+            <!-- Nouveaux services d'évolution -->
+            <div class="card" style="--i: 4">
+                <img src="images/formation.jpg" alt="Formation agricole">
+                <div class="card-body">
+                    <h3>Formation et Développement</h3>
+                    <p>Accédez à des formations modernes pour maîtriser les dernières techniques agricoles.</p>
+                    <a href="register.html" class="btn">En savoir plus →</a>
+                </div>
+            </div>
+
+            <div class="card" style="--i: 5">
+                <img src="images/accompagnement.jpg" alt="Accompagnement personnalisé">
+                <div class="card-body">
+                    <h3>Accompagnement Personnalisé</h3>
+                    <p>Bénéficiez d'un suivi sur mesure pour optimiser votre production et votre gestion.</p>
+                    <a href="register.html" class="btn">Demander un accompagnement →</a>
+                </div>
+            </div>
+
+            <div class="card" style="--i: 6">
+                <img src="images/marches.jpg" alt="Marchés internationaux">
+                <div class="card-body">
+                    <h3>Accès aux Marchés</h3>
+                    <p>Développez votre réseau et explorez de nouvelles opportunités de vente à l'échelle nationale et internationale.</p>
+                    <a href="register.html" class="btn">Découvrir les marchés →</a>
                 </div>
             </div>
         </div>
@@ -88,5 +136,6 @@
         <p>© 2026 <strong>AgriConnect</strong> — Tous droits réservés</p>
     </footer>
 
+    <script src="script.js"></script>
 </body>
 </html>
