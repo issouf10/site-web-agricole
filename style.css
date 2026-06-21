@@ -1009,6 +1009,21 @@ body {
     box-shadow: 0 0 0 4px rgba(46,125,50,0.1);
 }
 
+.form-group textarea {
+    width: 100%;
+    padding: 13px 16px;
+    border: 2px solid var(--border);
+    border-radius: var(--radius);
+    font-family: 'DM Sans', sans-serif;
+    font-size: 15px;
+    color: var(--text);
+    background: #fafafa;
+    transition: all 0.2s ease;
+    outline: none;
+    resize: vertical;
+    min-height: 100px;
+}
+
 .form-group input::placeholder { color: #b0b8b0; }
 
 .btn-submit {
