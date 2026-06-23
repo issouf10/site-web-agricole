@@ -1098,3 +1098,83 @@ footer strong { color: #fff; }
 @media (prefers-reduced-motion: reduce) {
     *, *::before, *::after { animation: none !important; transition-duration: 0.01ms !important; }
 }
+
+.contact-cta {
+    padding: 80px 20px;
+    text-align: center;
+    background: linear-gradient(135deg,#1b5e20,#2e7d32);
+    color: white;
+}
+
+.contact-cta h2 {
+    font-size: 36px;
+    margin-bottom: 20px;
+}
+
+.contact-cta p {
+    max-width: 700px;
+    margin: auto;
+    margin-bottom: 30px;
+    line-height: 1.7;
+}
+
+.cta-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.btn-call,
+.btn-mail {
+    text-decoration: none;
+    padding: 15px 30px;
+    border-radius: 8px;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+.btn-call {
+    background: white;
+    color: #1b5e20;
+}
+
+.btn-mail {
+    background: #ff9800;
+    color: white;
+}
+
+.btn-call:hover,
+.btn-mail:hover {
+    transform: translateY(-3px);
+}
+.cta {
+    text-align: center;
+    padding: 70px 20px;
+    background: #f4f8f4;
+}
+
+.cta h2 {
+    color: #1b5e20;
+    margin-bottom: 15px;
+}
+
+.cta p {
+    max-width: 700px;
+    margin: auto;
+    margin-bottom: 25px;
+}
+
+.cta-btn {
+    display: inline-block;
+    background: #2e7d32;
+    color: white;
+    padding: 15px 30px;
+    text-decoration: none;
+    border-radius: 8px;
+    font-weight: bold;
+}
+
+.cta-btn:hover {
+    background: #1b5e20;
+}
