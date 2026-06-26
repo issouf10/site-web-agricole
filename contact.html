@@ -1,20 +1,627 @@
-<!-- CTA Final -->
-<section class="contact-cta">
-    <div class="cta-content">
-        <h2>Prêt à développer votre activité agricole ?</h2>
-        <p>
-            Rejoignez AgriConnect dès aujourd'hui et profitez de solutions
-            modernes pour améliorer votre production et accéder à de nouveaux marchés.
-        </p>
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contactez-nous - AgriConnect</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        /* ========== CONTACT PAGE STYLES ========== */
 
-        <div class="cta-buttons">
-            <a href="tel:+22570000000" class="btn-call">
-                📞 Appelez-nous
-            </a>
+        .contact-hero {
+            background: linear-gradient(135deg, #1b5e20 0%, #2e7d32 100%);
+            color: white;
+            padding: 80px 24px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
 
-            <a href="mailto:contact@agriconnect.ci" class="btn-mail">
-                📧 Envoyer un Email
-            </a>
+        .contact-hero::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            right: -10%;
+            width: 500px;
+            height: 500px;
+            background: radial-gradient(circle, rgba(255,160,0,0.1) 0%, transparent 70%);
+            border-radius: 50%;
+            pointer-events: none;
+        }
+
+        .contact-hero h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: 48px;
+            font-weight: 900;
+            margin-bottom: 16px;
+            position: relative;
+            z-index: 1;
+        }
+
+        .contact-hero p {
+            font-size: 18px;
+            color: rgba(255,255,255,0.85);
+            max-width: 700px;
+            margin: auto;
+            position: relative;
+            z-index: 1;
+        }
+
+        /* Main Content */
+        .contact-section {
+            padding: 80px 24px;
+            background: white;
+        }
+
+        .contact-container {
+            max-width: 1100px;
+            margin: auto;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 80px;
+            align-items: flex-start;
+        }
+
+        .contact-info {
+            display: flex;
+            flex-direction: column;
+            gap: 48px;
+        }
+
+        .contact-info h2 {
+            font-family: 'Playfair Display', serif;
+            font-size: 32px;
+            color: var(--primary-dark);
+            margin-bottom: 8px;
+        }
+
+        .contact-info > p {
+            color: var(--text-muted);
+            font-size: 16px;
+            line-height: 1.6;
+        }
+
+        .info-block {
+            display: flex;
+            gap: 20px;
+        }
+
+        .info-icon {
+            font-size: 32px;
+            flex-shrink: 0;
+        }
+
+        .info-content h3 {
+            color: var(--primary);
+            font-weight: 600;
+            margin-bottom: 6px;
+            font-size: 15px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .info-content p {
+            color: var(--text);
+            font-size: 16px;
+            margin-bottom: 4px;
+        }
+
+        .info-content a {
+            color: var(--primary);
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.2s ease;
+        }
+
+        .info-content a:hover {
+            color: var(--primary-dark);
+            text-decoration: underline;
+        }
+
+        .contact-form-container {
+            background: linear-gradient(135deg, rgba(46,125,50,0.02) 0%, transparent 100%);
+            border: 1.5px solid #e2e8e2;
+            border-radius: 16px;
+            padding: 48px;
+        }
+
+        .contact-form-container h2 {
+            font-family: 'Playfair Display', serif;
+            font-size: 32px;
+            color: var(--primary-dark);
+            margin-bottom: 12px;
+        }
+
+        .contact-form-container > p {
+            color: var(--text-muted);
+            margin-bottom: 32px;
+            font-size: 15px;
+        }
+
+        .form-group {
+            margin-bottom: 24px;
+        }
+
+        .form-group label {
+            display: block;
+            font-weight: 600;
+            color: var(--text);
+            margin-bottom: 8px;
+            font-size: 14px;
+        }
+
+        .form-group input,
+        .form-group textarea,
+        .form-group select {
+            width: 100%;
+            padding: 14px 16px;
+            border: 1.5px solid #e2e8e2;
+            border-radius: 8px;
+            font-family: 'DM Sans', sans-serif;
+            font-size: 15px;
+            transition: all 0.2s ease;
+            background: white;
+            color: var(--text);
+        }
+
+        .form-group input:focus,
+        .form-group textarea:focus,
+        .form-group select:focus {
+            outline: none;
+            border-color: var(--primary);
+            box-shadow: 0 0 0 3px rgba(46,125,50,0.1);
+        }
+
+        .form-row {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+        }
+
+        .form-group textarea {
+            resize: vertical;
+            min-height: 120px;
+        }
+
+        .form-checkbox {
+            display: flex;
+            align-items: flex-start;
+            gap: 12px;
+            margin-bottom: 24px;
+        }
+
+        .form-checkbox input[type="checkbox"] {
+            width: auto;
+            margin-top: 4px;
+            cursor: pointer;
+        }
+
+        .form-checkbox label {
+            margin: 0;
+            font-size: 14px;
+            color: var(--text-muted);
+            cursor: pointer;
+        }
+
+        .form-checkbox a {
+            color: var(--primary);
+            text-decoration: none;
+        }
+
+        .form-checkbox a:hover {
+            text-decoration: underline;
+        }
+
+        .form-submit {
+            width: 100%;
+            padding: 16px 24px;
+            background: linear-gradient(135deg, #2e7d32 0%, #1b5e20 100%);
+            color: white;
+            border: none;
+            border-radius: 8px;
+            font-size: 16px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            box-shadow: 0 8px 24px rgba(46,125,50,0.3);
+        }
+
+        .form-submit:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 12px 32px rgba(46,125,50,0.4);
+        }
+
+        .form-submit:active {
+            transform: translateY(0);
+        }
+
+        .form-submit:disabled {
+            opacity: 0.6;
+            cursor: not-allowed;
+            transform: none;
+        }
+
+        .form-success {
+            display: none;
+            background: #e8f5e9;
+            color: #1b5e20;
+            padding: 16px 20px;
+            border-radius: 8px;
+            margin-bottom: 24px;
+            font-size: 15px;
+            border-left: 4px solid #2e7d32;
+            animation: slideDown 0.4s ease both;
+        }
+
+        .form-error {
+            display: none;
+            background: #ffebee;
+            color: #c62828;
+            padding: 16px 20px;
+            border-radius: 8px;
+            margin-bottom: 24px;
+            font-size: 15px;
+            border-left: 4px solid #d32f2f;
+        }
+
+        /* Why Contact Section */
+        .contact-why {
+            padding: 80px 24px;
+            background: linear-gradient(135deg, #f5f7f5 0%, rgba(46,125,50,0.05) 100%);
+        }
+
+        .contact-why-content {
+            max-width: 1100px;
+            margin: auto;
+        }
+
+        .contact-why-header {
+            text-align: center;
+            margin-bottom: 60px;
+        }
+
+        .contact-why-header h2 {
+            font-family: 'Playfair Display', serif;
+            font-size: 36px;
+            color: var(--primary-dark);
+            margin-bottom: 16px;
+        }
+
+        .contact-why-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 40px;
+        }
+
+        .contact-why-card {
+            text-align: center;
+            padding: 40px 30px;
+        }
+
+        .contact-why-icon {
+            font-size: 48px;
+            margin-bottom: 16px;
+        }
+
+        .contact-why-card h3 {
+            color: var(--primary-dark);
+            font-weight: 600;
+            margin-bottom: 12px;
+            font-size: 18px;
+        }
+
+        .contact-why-card p {
+            color: var(--text-muted);
+            line-height: 1.6;
+            font-size: 15px;
+        }
+
+        /* Response Time Indicator */
+        .response-indicator {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            margin-top: 20px;
+            padding: 16px;
+            background: #e8f5e9;
+            border-radius: 8px;
+            color: #1b5e20;
+            font-size: 14px;
+        }
+
+        .response-indicator::before {
+            content: '';
+            width: 8px;
+            height: 8px;
+            background: #4caf50;
+            border-radius: 50%;
+            animation: pulse 2s infinite;
+        }
+
+        @keyframes pulse {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.5; }
+        }
+
+        /* Animations */
+        @keyframes slideDown {
+            from {
+                opacity: 0;
+                transform: translateY(-20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Responsive */
+        @media (max-width: 900px) {
+            .contact-container {
+                grid-template-columns: 1fr;
+                gap: 60px;
+            }
+
+            .contact-form-container {
+                padding: 40px 24px;
+            }
+
+            .form-row {
+                grid-template-columns: 1fr;
+            }
+
+            .contact-hero h1 {
+                font-size: 36px;
+            }
+        }
+
+        @media (max-width: 640px) {
+            .contact-hero {
+                padding: 60px 20px;
+            }
+
+            .contact-hero h1 {
+                font-size: 28px;
+            }
+
+            .contact-section {
+                padding: 60px 20px;
+            }
+
+            .contact-form-container {
+                padding: 30px 20px;
+            }
+
+            .contact-why {
+                padding: 60px 20px;
+            }
+
+            .contact-why-header h2 {
+                font-size: 28px;
+            }
+
+            .contact-why-grid {
+                grid-template-columns: 1fr;
+                gap: 30px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <h1 class="logo">🌱 AgriConnect</h1>
+        <ul class="nav-links">
+            <li><a href="index.html">Accueil</a></li>
+            <li><a href="products.html">Produits</a></li>
+            <li><a href="landing.html">Conseils</a></li>
+            <li><a href="features.html">Fonctionnalités</a></li>
+        </ul>
+    </nav>
+
+    <!-- Hero -->
+    <section class="contact-hero">
+        <h1>Intéressé par Nos Produits ?</h1>
+        <p>Vous souhaitez commander, obtenir un devis ou en savoir plus sur nos produits agricoles ? Remplissez le formulaire ci-dessous et notre équipe vous répond en moins de 24h.</p>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="contact-section">
+        <div class="contact-container">
+            <!-- Contact Info -->
+            <div class="contact-info">
+                <div>
+                    <h2>Vous êtes intéressé par nos produits ?</h2>
+                    <p>Que vous souhaitiez passer une commande, obtenir un devis, en savoir plus sur la disponibilité d'un produit ou discuter d'un partenariat commercial, notre équipe est là pour vous.</p>
+                </div>
+
+                <div class="info-block">
+                    <div class="info-icon">📧</div>
+                    <div class="info-content">
+                        <h3>Email</h3>
+                        <p>contact@agriconnect.ci</p>
+                        <a href="mailto:contact@agriconnect.ci">Envoyer un email →</a>
+                    </div>
+                </div>
+
+                <div class="info-block">
+                    <div class="info-icon">📞</div>
+                    <div class="info-content">
+                        <h3>Téléphone</h3>
+                        <p>+225 70 00 00 00</p>
+                        <a href="tel:+22570000000">Appeler maintenant →</a>
+                    </div>
+                </div>
+
+                <div class="info-block">
+                    <div class="info-icon">📍</div>
+                    <div class="info-content">
+                        <h3>Adresse</h3>
+                        <p>Abidjan, Côte d'Ivoire</p>
+                        <p style="font-size: 14px; margin-top: 4px; color: var(--text-muted);">Horaires : Lun-Ven 8h-18h (GMT+0)</p>
+                    </div>
+                </div>
+
+                <div class="info-block">
+                    <div class="info-icon">⏱️</div>
+                    <div class="info-content">
+                        <h3>Temps de Réponse</h3>
+                        <p>Nous répondons à tous les messages dans les 24 heures</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Contact Form -->
+            <div class="contact-form-container">
+                <h2>Formulaire d'Intérêt Produit</h2>
+                <p>Décrivez votre demande et nous vous recontactons rapidement avec une offre personnalisée.</p>
+
+                <div id="form-success" class="form-success">
+                    ✅ Merci pour votre message ! Nous vous répondrons dans les 24 heures.
+                </div>
+                <div id="form-error" class="form-error">
+                    ⚠️ Une erreur s'est produite. Veuillez réessayer.
+                </div>
+
+                <form id="contact-form" onsubmit="handleContactForm(event)">
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="fullname">Nom Complet *</label>
+                            <input type="text" id="fullname" name="fullname" placeholder="Jean Dupont" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Votre Email *</label>
+                            <input type="email" id="email" name="email" placeholder="jean@email.com" required>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="phone">Téléphone (Optionnel)</label>
+                        <input type="tel" id="phone" name="phone" placeholder="+225 70 00 00 00">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="subject">Sujet de Votre Demande *</label>
+                        <select id="subject" name="subject" required>
+                            <option value="">-- Sélectionnez un sujet --</option>
+                            <option value="product-interest" selected>🛒 Je suis intéressé par vos produits</option>
+                            <option value="quote">💰 Demande de devis / prix</option>
+                            <option value="availability">📦 Disponibilité d'un produit</option>
+                            <option value="bulk-order">🚛 Commande en gros</option>
+                            <option value="partnership">🤝 Proposition de partenariat</option>
+                            <option value="technical-support">🔧 Support technique</option>
+                            <option value="general-inquiry">❓ Question générale</option>
+                            <option value="other">Autre</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="message">Votre Message *</label>
+                        <textarea id="message" name="message" placeholder="Ex : Je suis intéressé par vos avocats et mangues. Pouvez-vous m'envoyer vos tarifs pour une commande de 100 kg ? Je suis disponible les jours ouvrables..." required></textarea>
+                    </div>
+
+                    <div class="form-checkbox">
+                        <input type="checkbox" id="terms" name="terms" required>
+                        <label for="terms">
+                            J'accepte les <a href="#" target="_blank">conditions d'utilisation</a> et la <a href="#" target="_blank">politique de confidentialité</a>
+                        </label>
+                    </div>
+
+                    <button type="submit" id="submit-btn" class="form-submit">
+                        Envoyer Mon Message →
+                    </button>
+
+                    <div class="response-indicator">
+                        Nous répondons généralement en moins de 24h
+                    </div>
+                </form>
+            </div>
         </div>
-    </div>
-</section>
+    </section>
+
+    <!-- Why Contact -->
+    <section class="contact-why">
+        <div class="contact-why-content">
+            <div class="contact-why-header">
+                <h2>Pourquoi Nous Contacter ?</h2>
+            </div>
+            <div class="contact-why-grid">
+                <div class="contact-why-card">
+                    <div class="contact-why-icon">👨‍🌾</div>
+                    <h3>Support Agriculteurs</h3>
+                    <p>Obtenez de l'aide pour optimiser votre utilisation de la plateforme et vos récoltes.</p>
+                </div>
+                <div class="contact-why-card">
+                    <div class="contact-why-icon">🤝</div>
+                    <h3>Partenariats</h3>
+                    <p>Explorez les opportunités de collaboration avec AgriConnect pour développer votre activité.</p>
+                </div>
+                <div class="contact-why-card">
+                    <div class="contact-why-icon">📊</div>
+                    <h3>Solutions B2B</h3>
+                    <p>Solutions personnalisées pour les coopératives et les entreprises agricoles.</p>
+                </div>
+                <div class="contact-why-card">
+                    <div class="contact-why-icon">🎓</div>
+                    <h3>Formations</h3>
+                    <p>Découvrez nos programmes de formation et de développement de compétences agricoles.</p>
+                </div>
+                <div class="contact-why-card">
+                    <div class="contact-why-icon">💼</div>
+                    <h3>Investissements</h3>
+                    <p>Pour les investisseurs intéressés par le secteur agricole technologique.</p>
+                </div>
+                <div class="contact-why-card">
+                    <div class="contact-why-icon">🔧</div>
+                    <h3>Assistance Technique</h3>
+                    <p>Support pour tout problème technique ou accès à l'application.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p>© 2026 <strong>AgriConnect</strong> — Tous droits réservés</p>
+    </footer>
+
+    <script>
+        function handleContactForm(e) {
+            e.preventDefault();
+            
+            const fullname = document.getElementById('fullname').value;
+            const email = document.getElementById('email').value;
+            const phone = document.getElementById('phone').value;
+            const subject = document.getElementById('subject').value;
+            const message = document.getElementById('message').value;
+            const submitBtn = document.getElementById('submit-btn');
+            
+            // Désactiver le bouton pendant l'envoi
+            submitBtn.disabled = true;
+            submitBtn.textContent = 'Envoi en cours...';
+            
+            // Simuler l'envoi au serveur
+            setTimeout(() => {
+                // Ici tu peux envoyer les données à ton serveur
+                console.log('Contact Form:', { fullname, email, phone, subject, message });
+                
+                // Afficher le message de succès
+                const successDiv = document.getElementById('form-success');
+                successDiv.style.display = 'block';
+                
+                // Réactiver le bouton
+                submitBtn.disabled = false;
+                submitBtn.textContent = 'Envoyer Mon Message →';
+                
+                // Réinitialiser le formulaire
+                document.getElementById('contact-form').reset();
+                
+                // Masquer le message après 5 secondes
+                setTimeout(() => {
+                    successDiv.style.display = 'none';
+                }, 5000);
+            }, 1000);
+        }
+    </script>
+</body>
+</html>

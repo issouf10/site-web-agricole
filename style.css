@@ -1098,83 +1098,73 @@ footer strong { color: #fff; }
 @media (prefers-reduced-motion: reduce) {
     *, *::before, *::after { animation: none !important; transition-duration: 0.01ms !important; }
 }
-
-.contact-cta {
-    padding: 80px 20px;
+/* ========== BANDEAU CTA CONTACT (appel à l'action) ========== */
+.cta-contact-band {
+    background: linear-gradient(135deg, #1b5e20 0%, #2e7d32 100%);
+    color: white;
     text-align: center;
-    background: linear-gradient(135deg,#1b5e20,#2e7d32);
+    padding: 64px 24px;
+    position: relative;
+    overflow: hidden;
+}
+
+.cta-contact-band::before {
+    content: '';
+    position: absolute;
+    top: -60%;
+    right: -5%;
+    width: 400px;
+    height: 400px;
+    background: radial-gradient(circle, rgba(255,160,0,0.12) 0%, transparent 70%);
+    border-radius: 50%;
+    pointer-events: none;
+}
+
+.cta-contact-band .cta-contact-inner {
+    position: relative;
+    z-index: 1;
+    max-width: 700px;
+    margin: auto;
+}
+
+.cta-contact-band h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: 34px;
+    font-weight: 900;
+    margin-bottom: 14px;
     color: white;
 }
 
-.contact-cta h2 {
-    font-size: 36px;
-    margin-bottom: 20px;
+.cta-contact-band p {
+    font-size: 17px;
+    color: rgba(255,255,255,0.88);
+    margin-bottom: 32px;
+    line-height: 1.6;
 }
 
-.contact-cta p {
-    max-width: 700px;
-    margin: auto;
-    margin-bottom: 30px;
-    line-height: 1.7;
-}
-
-.cta-buttons {
-    display: flex;
-    justify-content: center;
-    gap: 20px;
-    flex-wrap: wrap;
-}
-
-.btn-call,
-.btn-mail {
-    text-decoration: none;
-    padding: 15px 30px;
-    border-radius: 8px;
-    font-weight: bold;
-    transition: 0.3s;
-}
-
-.btn-call {
-    background: white;
-    color: #1b5e20;
-}
-
-.btn-mail {
-    background: #ff9800;
-    color: white;
-}
-
-.btn-call:hover,
-.btn-mail:hover {
-    transform: translateY(-3px);
-}
-.cta {
-    text-align: center;
-    padding: 70px 20px;
-    background: #f4f8f4;
-}
-
-.cta h2 {
-    color: #1b5e20;
-    margin-bottom: 15px;
-}
-
-.cta p {
-    max-width: 700px;
-    margin: auto;
-    margin-bottom: 25px;
-}
-
-.cta-btn {
+.cta-contact-band .btn-cta-contact {
     display: inline-block;
-    background: #2e7d32;
+    background: #ffa000;
     color: white;
-    padding: 15px 30px;
+    font-weight: 700;
+    font-size: 17px;
+    padding: 16px 40px;
+    border-radius: 50px;
     text-decoration: none;
-    border-radius: 8px;
-    font-weight: bold;
+    box-shadow: 0 8px 24px rgba(0,0,0,0.2);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    letter-spacing: 0.3px;
 }
 
-.cta-btn:hover {
-    background: #1b5e20;
+.cta-contact-band .btn-cta-contact:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 14px 32px rgba(0,0,0,0.28);
+    background: #ff8f00;
+}
+
+@media (max-width: 640px) {
+    .cta-contact-band { padding: 48px 20px; }
+    .cta-contact-band h2 { font-size: 26px; }
+    .cta-contact-band p { font-size: 15px; }
+    .cta-contact-band .btn-cta-contact { font-size: 15px; padding: 14px 28px; }
 }

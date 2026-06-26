@@ -6,17 +6,6 @@
     <title>Inscription - AgriConnect</title>
     <link rel="stylesheet" href="style.css">
 </head>
-<section class="cta">
-    <h2>Intéressé par nos produits agricoles ?</h2>
-    <p>
-        Contactez notre équipe pour découvrir comment AgriConnect
-        peut vous aider à développer votre activité.
-    </p>
-
-    <a href="contact.html" class="cta-btn">
-        Nous contacter →
-    </a>
-</section>
 <body>
 
     <!-- Navigation -->
@@ -60,8 +49,7 @@
                 Rejoignez AgriConnect et profitez des services<br>agricoles modernes gratuitement.
             </p>
 
-            <form action="#" method="POST" onsubmit="handleRegister(event)">
-
+            <form action="register.php" method="POST">
                 <div class="form-group">
                     <label for="fullname">Nom complet</label>
                     <input
@@ -134,50 +122,6 @@
             <a href="contact.html" style="color: rgba(255,255,255,0.65); font-size: 13px; margin-top: 8px; display: inline-block;">Une question ? Contactez-nous</a>
         </p>
     </footer>
-
-    <script>
-        function handleRegister(e) {
-            e.preventDefault();
-            const name = document.getElementById('fullname').value.trim();
-            const email = document.getElementById('email').value.trim();
-            const password = document.getElementById('password').value;
-            const confirm = document.getElementById('confirmPassword').value;
-            const errorMsg = document.getElementById('error-msg');
-            const successMsg = document.getElementById('success-msg');
-
-            errorMsg.style.display = 'none';
-            successMsg.style.display = 'none';
-
-            if (!name || !email || !password || !confirm) {
-                errorMsg.textContent = '⚠️ Veuillez remplir tous les champs.';
-                errorMsg.style.display = 'block';
-                return;
-            }
-
-            if (name.length < 2) {
-                errorMsg.textContent = '⚠️ Veuillez entrer un nom valide.';
-                errorMsg.style.display = 'block';
-                return;
-            }
-
-            if (password.length < 6) {
-                errorMsg.textContent = '⚠️ Le mot de passe doit contenir au moins 6 caractères.';
-                errorMsg.style.display = 'block';
-                return;
-            }
-
-            if (password !== confirm) {
-                errorMsg.textContent = '⚠️ Les mots de passe ne correspondent pas.';
-                errorMsg.style.display = 'block';
-                return;
-            }
-
-            // Inscription réussie
-            successMsg.textContent = '✅ Compte créé avec succès ! Bienvenue sur AgriConnect, ' + name + ' !';
-            successMsg.style.display = 'block';
-            e.target.reset();
-        }
-    </script>
 
     <script src="script.js"></script>
 </body>
